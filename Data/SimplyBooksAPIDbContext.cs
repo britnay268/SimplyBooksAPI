@@ -1,11 +1,25 @@
 ﻿using System;
-namespace SimplyBooksAPI.Data
+using Microsoft.EntityFrameworkCore;
+using SimplyBooksAPI.Models;
+namespace SimplyBooksAPI.Data;
+
+public class SimplyBooksAPIDbContext : DbContext
 {
-	public class SimplyBooksAPIDbContext
-	{
-		public SimplyBooksAPIDbContext()
-		{
-		}
-	}
+	public DbSet<Authors> Authors { get; set; }
+    public DbSet<Books> Books { get; set; }
+    public DbSet<Users> Users { get; set; }
+    public DbSet<AuthorBooks> AuthorBooks { get; set; }
+
+    public SimplyBooksAPIDbContext(DbContextOptions<SimplyBooksAPIDbContext> context) : base(context)
+    {
+
+    }
+
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        modelBuilder.Entity<Authors>().HasData(AuthorData.Authors);
+        modelBuilder.Entity<Books>().HasData(BookData.Books);
+        modelBuilder.Entity<Users>().HasData(UserData.Users);
+    }
 }
 

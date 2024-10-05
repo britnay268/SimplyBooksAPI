@@ -5,7 +5,7 @@ namespace SimplyBooksAPI.Data;
 
 public class UserData
 {
-	public List<Users> Users = new List<Users>
+	public static List<Users> Users = new List<Users>
 	{
 		new Users
 		{

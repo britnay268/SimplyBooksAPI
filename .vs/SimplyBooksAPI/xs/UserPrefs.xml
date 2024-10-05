@@ -1,18 +1,12 @@
 ﻿<Properties StartupConfiguration="{14B6ADE6-4B22-4FC3-91DD-C69275570F03}|https">
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.SimplyBooksAPI PreferredExecutionTarget="/Applications/Google Chrome.app" />
-  <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
-  </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.Workbench ActiveDocument="Models/Authors.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Program.cs">
     <Files>
-      <File FileName="Data/BookData.cs" Line="6" Column="2" />
-      <File FileName="Data/UserData.cs" Line="1" Column="1" />
-      <File FileName="Models/Authors.cs" Line="6" Column="22" />
+      <File FileName="Data/BookData.cs" />
+      <File FileName="Models/Authors.cs" />
       <File FileName="Models/Books.cs" Line="19" Column="1" />
-      <File FileName="Data/AuthorData.cs" Line="24" Column="34" NotebookId="1" />
+      <File FileName="Data/SimplyBooksAPIDbContext.cs" Line="1" Column="1" />
+      <File FileName="Program.cs" Line="28" Column="2" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -20,13 +14,18 @@
           <Node name="SimplyBooksAPI">
             <Node name="SimplyBooksAPI">
               <Node name="Data" expanded="True" />
-              <Node name="Models">
-                <Node name="Authors.cs" selected="True" />
-              </Node>
+              <Node name="Models" expanded="True" />
+              <Node name="Program.cs" selected="True" />
             </Node>
           </Node>
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.ItemProperties.SimplyBooksAPI PreferredExecutionTarget="/Applications/Google Chrome.app" />
 </Properties>

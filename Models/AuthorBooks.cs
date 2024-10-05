@@ -3,8 +3,6 @@ namespace SimplyBooksAPI.Models
 {
 	public class AuthorBooks
 	{
-        public int Id { get; set; }
-
         public int AuthorId { get; set; }
         public Authors Author { get; set; }
 

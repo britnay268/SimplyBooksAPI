@@ -6,11 +6,8 @@ namespace SimplyBooksAPI.Models
         public int AuthorId { get; set; }
         public Authors Author { get; set; }
 
-        public int BookId { get; set; }
+        public Guid BookId { get; set; }
         public Books Book { get; set; }
-
-        public int UserId { get; set; }
-        public Users User { get; set; }
     }
 }
 

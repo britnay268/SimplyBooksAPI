@@ -1,11 +1,13 @@
 using System.Text.Json.Serialization;
 using Microsoft.AspNetCore.Http.Json;
 using SimplyBooksAPI.Data;
+using SimplyBooksAPI.Endpoints;
+using SimplyBooksAPI.Services;
+using SimplyBooksAPI.Interfaces;
+using SimplyBooksAPI.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
 
 // allows passing datetimes without time zone data 
 AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
@@ -19,6 +21,12 @@ builder.Services.Configure<JsonOptions>(options =>
     options.SerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles;
 });
 
+builder.Services.AddScoped<IBookService, BookService>();
+builder.Services.AddScoped<IBookRepository, BookRepository>();
+
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
+
 
 var app = builder.Build();
 
@@ -30,5 +38,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.MapBookEndpoints();
 
 app.Run();

@@ -29,7 +29,7 @@ namespace SimplyBooksAPI.Repositories
         // Get Author by Id (Get Author Books)
         public async Task<Authors> GetAuthorByIdAsync(int id)
         {
-            return await dbContext.Authors.Include(b => b.AuthorBooks).FirstOrDefaultAsync(a => a.Id == id);
+            return await dbContext.Authors.Include(b => b.AuthorBooks).ThenInclude(ab => ab.Book).FirstOrDefaultAsync(a => a.Id == id);
         }
 
         // Get Favorite Authors

@@ -23,13 +23,13 @@ public class SimplyBooksAPIDbContext : DbContext
         modelBuilder.Entity<AuthorBooks>()
         .HasKey(ab => new { ab.AuthorId, ab.BookId });
         modelBuilder.Entity<AuthorBooks>()
-            .HasOne(ab => ab.Book)
-            .WithMany(b => b.AuthorBooks)
-            .HasForeignKey(ab => ab.BookId);
-        modelBuilder.Entity<AuthorBooks>()
             .HasOne(ab => ab.Author)
             .WithMany(a => a.AuthorBooks)
             .HasForeignKey(ab => ab.AuthorId);
+        modelBuilder.Entity<AuthorBooks>()
+            .HasOne(ab => ab.Book)
+            .WithMany(b => b.AuthorBooks)
+            .HasForeignKey(ab => ab.BookId);
     }
 }
 

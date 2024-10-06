@@ -20,7 +20,7 @@ namespace SimplyBooksAPI.Endpoints
             .Produces<List<Books>>(StatusCodes.Status200OK);
 
             // Get All User's Books
-            group.MapGet("/{userId}/books", async (IBookService bookService, int userId) =>
+            group.MapGet("/user/{userId}", async (IBookService bookService, int userId) =>
             {
                 return await bookService.GetUserBooksAsync(userId);
             })

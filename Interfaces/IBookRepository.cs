@@ -16,7 +16,7 @@ namespace SimplyBooksAPI.Interfaces
         // Update Book
         Task<Books> UpdateBookAsync(Guid id, Books book);
         // Delete Book
-        Task<Books> DeleteBookAsync (Guid id);
+        Task<Books> DeleteBookAsync(Guid id);
     }
 }
 

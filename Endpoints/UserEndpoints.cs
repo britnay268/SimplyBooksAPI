@@ -1,6 +1,7 @@
 ﻿using System;
 using SimplyBooksAPI.Models;
 using SimplyBooksAPI.Data;
+using SimplyBooksAPI.DTOs;
 
 namespace SimplyBooksAPI.Endpoints
 {
@@ -12,7 +13,12 @@ namespace SimplyBooksAPI.Endpoints
 
             group.MapGet("/", (SimplyBooksAPIDbContext db) =>
             {
-                return db.Users;
+                return db.Users.Select(user => new UserDTO
+                {
+                    Id = user.Id,
+                    Name = user.Name,
+                    Email = user.Email
+                }).ToList();
             });
         }
 	}

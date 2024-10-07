@@ -26,6 +26,7 @@
     <None Remove="Repositories\" />
     <None Remove="Services\" />
     <None Remove="Endpoints\" />
+    <None Remove="DTOs\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Data\" />
@@ -34,5 +35,6 @@
     <Folder Include="Repositories\" />
     <Folder Include="Services\" />
     <Folder Include="Endpoints\" />
+    <Folder Include="DTOs\" />
   </ItemGroup>
 </Project>

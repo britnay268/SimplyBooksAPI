@@ -44,5 +44,6 @@ app.UseHttpsRedirection();
 
 app.MapBookEndpoints();
 app.MapAuthorEndpoints();
+app.MapUserEndpoints();
 
 app.Run();

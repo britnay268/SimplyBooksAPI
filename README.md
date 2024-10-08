@@ -5,10 +5,9 @@
 SimplyBooksAPI is a RESTful API designed to provide CRUD (Create, Read, Update, Delete) operations for managing books and their associated authors. This API offers a flexible and efficient way to interact with book and author data, making it fit for various applications.
 
 
-### Endpoints
+## Endpoints
 
-**Authors**
-
+### Authors
 - GET /api/authors
 - POST /api/authors
 - GET /api/authors/user/{userId}
@@ -17,7 +16,7 @@ SimplyBooksAPI is a RESTful API designed to provide CRUD (Create, Read, Update, 
 - DELETE /api/authors/{id}
 - GET /api/authors/favorite
 
-**Books**
+###Books
 - GET /api/books
 - POST /api/books
 - GET /api/books/user/{userId}

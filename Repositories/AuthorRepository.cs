@@ -49,7 +49,7 @@ namespace SimplyBooksAPI.Repositories
         // Update Author
         public async Task<Authors> UpdateAuthorAsync(int id, Authors author)
         {
-            var existingAuthor = await dbContext.Authors.FindAsync(id);
+            var existingAuthor = await dbContext.Authors.SingleOrDefaultAsync(a => a.Idid);
             if (existingAuthor == null)
             {
                 return null;

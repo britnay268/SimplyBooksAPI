@@ -50,7 +50,7 @@ namespace SimplyBooksAPI.Endpoints
             group.MapPut("/{id}", async (IBookService bookService, Guid id, Books book) =>
             {
                 var bookToUpdate = await bookService.UpdateBookAsync(id, book);
-                return Results.Ok(bookToUpdate);
+                return Results.Ok("Book has been updated!");
             })
             .WithOpenApi()
             .Produces<Books>(StatusCodes.Status200OK)

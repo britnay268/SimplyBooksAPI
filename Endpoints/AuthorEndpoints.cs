@@ -57,7 +57,7 @@ namespace SimplyBooksAPI.Endpoints
             group.MapPut("/authors/{id}", async (IAuthorService authorService, int id, Authors author) =>
             {
                 var authorToUpdate = await authorService.UpdateAuthorAsync(id, author);
-                return Results.Ok(authorToUpdate);
+                return Results.Ok("Author has been updated!");
             })
             .WithOpenApi()
             .Produces<Books>(StatusCodes.Status200OK)
@@ -67,7 +67,7 @@ namespace SimplyBooksAPI.Endpoints
             group.MapDelete("/authors/{id}", async (IAuthorService authorService, int id) =>
             {
                 var authorToDelete = await authorService.DeleteAuthorAsync(id);
-                return Results.Ok(authorToDelete);
+                return Results.NoContent();
             })
             .WithOpenApi()
             .Produces<Books>(StatusCodes.Status204NoContent);

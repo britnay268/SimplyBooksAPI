@@ -66,11 +66,13 @@ namespace SimplyBooksAPI.Repositories
         // Delete Single Author and Books
         public async Task<Authors> DeleteAuthorAsync(int id)
         {
-            var authorToDelete = await dbContext.Authors.Include(b => b.AuthorBooks).FirstOrDefaultAsync(a => a.Id == id);
+            var authorToDelete = await dbContext.Authors.Include(b => b.AuthorBooks).ThenInclude(ab => ab.Book).FirstOrDefaultAsync(a => a.Id == id);
             if (authorToDelete == null)
             {
                 return null;
             }
+            dbContext.Books.RemoveRange(authorToDelete.AuthorBooks.Select(ab => ab.Book));
+
             dbContext.Authors.Remove(authorToDelete);
             await dbContext.SaveChangesAsync();
             return authorToDelete;

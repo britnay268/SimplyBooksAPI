@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SimplyBooksAPI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7a6e6a92f85519a9a02d60a62859b7adaf6b778e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b5ee03ed59b6da0b7ff23b02b27ca1b2022b6bec")]
 [assembly: System.Reflection.AssemblyProductAttribute("SimplyBooksAPI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SimplyBooksAPI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

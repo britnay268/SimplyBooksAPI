@@ -31,6 +31,10 @@ namespace SimplyBooksAPI.Endpoints
             group.MapGet("/{id}", async (IBookService bookService, Guid id) =>
             {
                 var book = await bookService.GetBooksByIdAsync(id);
+                if (book == null)
+                {
+                    return Results.NotFound();
+                }
                 return Results.Ok(book);
             })
             .WithOpenApi()
@@ -50,6 +54,10 @@ namespace SimplyBooksAPI.Endpoints
             group.MapPut("/{id}", async (IBookService bookService, Guid id, Books book) =>
             {
                 var bookToUpdate = await bookService.UpdateBookAsync(id, book);
+                if (bookToUpdate == null)
+                {
+                    return Results.NotFound();
+                }
                 return Results.Ok("Book has been updated!");
             })
             .WithOpenApi()
@@ -60,6 +68,10 @@ namespace SimplyBooksAPI.Endpoints
             group.MapDelete("/{id}", async (IBookService bookService, Guid id) =>
             {
                 var bookToDelete = await bookService.DeleteBookAsync(id);
+                if (bookToDelete == null)
+                {
+                    return Results.NotFound();
+                }
                 return Results.NoContent();
             })
             .WithOpenApi()
